@@ -65,7 +65,7 @@ Verified on a consumer laptop (Intel Core Ultra 5 135H, Linux / WSL2):
 
 ---
 
-## 🐬 The Marine Fleet Lineup
+## 🌊 The Marine Fleet Lineup
 
 | Model | Size | Active RAM | Specialization |
 | :--- | :--- | :--- | :--- |
@@ -73,7 +73,6 @@ Verified on a consumer laptop (Intel Core Ultra 5 135H, Linux / WSL2):
 | 🌊 **Beluga** | 3.0B | **< 950 MB** | **Context & Docs Maven:** Long-context synthesis, documentation Q&A, and repository search. |
 | 🦈 **Manta** | 494M | **< 180 MB** | **Workflow & Guru:** Compiler diagnostics explanation, AST repair, and structured refactoring. |
 | ⚡ **Skate** | 135M | **< 80 MB** | **Prompt Reflex:** Interactive intention triage, sub-second query clarification, and shell prompt help. |
-| 🐬 **Dolphin** | 70M | **< 50 MB** | **Conversational Router:** Instant intent classification and multi-agent dispatch. |
 
 ---
 
