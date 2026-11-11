@@ -1,0 +1,19 @@
+# Model binary files (GGUF, Safetensors, Bin)
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.onnx
+
+# Environment & Cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Logs & scratch
+*.log
+scratch/
+tmp/
