@@ -21,5 +21,5 @@
 
 ## Usage
 ```bash
-nio-xs run marine:blue
+nioxs blue
 ```

@@ -79,28 +79,41 @@ Verified on a consumer laptop (Intel Core Ultra 5 135H, Linux / WSL2):
 
 ## 🚀 Quickstart & Installation
 
-### Option 1: One-Line Autonomous Installer
-Run the official Nio Marine bootstrap script (Linux, macOS, Termux):
+### 1. Install the Sovereign Engine (`nioxs`)
+Install the high-performance native runtime via the universal installer (Linux, macOS, WSL):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nio-labs/nio-marine/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nio-labs/nio-xs/main/install.sh | bash
 ```
 
-### Option 2: Running with `nio-xs`
-If you already have the [`nio-xs`](https://github.com/nio-labs/nio-xs) sovereign engine installed:
-
-```bash
-# Pull and chat with Blue (Flagship Companion)
-nio-xs pull marine:blue
-nio-xs run marine:blue
-
-# Run an architectural inquiry
-nio-xs run marine:blue -p "Compare Raft vs Multi-Paxos under high network jitter."
+For native Windows (PowerShell):
+```powershell
+irm https://raw.githubusercontent.com/nio-labs/nio-xs/main/install.ps1 | iex
 ```
 
-### Option 3: Terminal Interactive Mode
+### 2. Direct CLI Invocation
+Interact with any Marine companion directly via `nioxs`:
+
 ```bash
-$ nio-xs marine
+# Chat with Blue (Flagship Companion)
+nioxs blue
+
+# Single-shot architectural inquiry with chain-of-thought reasoning
+nioxs blue "Compare Raft vs Multi-Paxos under high network jitter."
+
+# Beluga (Lead Architect & Documentation Memory)
+nioxs beluga "Explain epoll vs io_uring architecture under high concurrency"
+
+# Manta (Systems Guru & DAG Workflow Generation)
+nioxs manta "Architect a zero-downtime PostgreSQL schema migration"
+
+# Skate (Ambient Desk Companion & Triage)
+nioxs skate "Plan out our focus sprint for the morning"
+```
+
+### 3. Terminal Interactive Pair-Programming
+```bash
+$ nioxs blue
 🌊 Nio Marine v0.3 (Blue-1.4B / Peak RAM: 391MB)
 > How should we organize our multi-threaded event loop in Rust?
 <think>
