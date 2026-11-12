@@ -51,9 +51,9 @@ Nio Marine (v-µLM Layer Streaming + nio-xs):
 4. **Direct SIMD Integer Quantization:**
    Computations run directly on quantized weights via CPU AVX2 / AVX-512 / ARM NEON registers without intermediate dequantization buffers.
 
-### Production Benchmark Verification (Pure CPU)
+### Production Benchmark Verification
 
-Verified on a consumer laptop (Intel Core Ultra 5 135H, Linux / WSL2):
+#### 1. Pure CPU Baseline (Intel Core Ultra 5 135H, Linux / WSL2)
 
 | Metric | Traditional 7B/8B (Ollama) | Nio Marine Flagship (`Blue`) |
 | :--- | :--- | :--- |
@@ -62,6 +62,17 @@ Verified on a consumer laptop (Intel Core Ultra 5 135H, Linux / WSL2):
 | **Disk Binary Size** | `4.7 GB` | **`1.4 GB`** |
 | **Usable on 8GB MacBook Air?** | ❌ System Lag | **✅ Silky Smooth** |
 | **Usable Alongside Docker/Chrome?** | ❌ High OOM Risk | **✅ Leaves 90%+ RAM Free** |
+
+#### 2. Native GPU Acceleration Benchmarks (MacBook Air M1, 8GB RAM, macOS Metal)
+
+Executed directly via `nioxs` sovereign companion runtime with 100% Metal GPU offloading:
+
+| Model | Parameters | Disk Size | Metal Offload | Avg First Latency | Avg Words | Streaming Throughput |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| ⚡ **Skate** | 135M | `82 MB` | **30/30 layers (100% GPU)** | **1.77 s** | 27 words | **14.55 words/s** |
+| 🦈 **Manta** | 494M | `318 MB` | **24/24 layers (100% GPU)** | **3.07 s** | 65 words | **21.18 words/s** |
+| 🌊 **Beluga** | 1.54B | `610 MB` | **28/28 layers (100% GPU)** | **5.35 s** | 29 words | **5.42 words/s** |
+| 🐋 **Blue** | 1.4B | `1.4 GB` | CPU / Hybrid (8GB unified memory SLA) | 11.20 s | 32 words | 2.20 words/s |
 
 ---
 
